@@ -7,49 +7,53 @@
     <title>Sword Shield Bow</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/normalize.css">
+    <script src="https://kit.fontawesome.com/2af0aca07e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class ='SSBHeader'>
     <div class="title-colors">
         <h1>
-            <span class="green-color">SWORD</span>&nbsp;
-            <span class="yellow-color">SHIELD</span>&nbsp;
-            <span class="blue-color">BOW</span>
+            <span class="green-color">STONE</span>&nbsp;
+            <span class="yellow-color">SCISSORS</span>&nbsp;
+            <span class="blue-color">PAPER</span>
         </h1>
     </div>
 
-        <div class=""><p>3 Weapons ︱ 5 Lives ︱ 2 Destinies</p></div>
+    <div class="description"><p>3 Weapons ︱ 5 Lives ︱ 2 Destinies</p></div>
 
     <div class="header-rules">
         <p>
-            <span class="green-color">Sword</span> beats <span class="blue-color">Bow</span> ︱
-            <span class="blue-color">Bow</span> beats <span class="yellow-color">Shield</span> ︱
-            <span class="yellow-color">Shield</span> beats <span class="green-color">Sword</span>
+            <span class="green-color">Stone</span> beats <span class="blue-color">Paper</span> ︱
+            <span class="blue-color">Paper</span> beats <span class="yellow-color">Scissors</span> ︱
+            <span class="yellow-color">Scissors</span> beats <span class="green-color">Stone</span>
         </p>
     </div>
     </header>
 
     <main class="main-container">
-        <div class="weapons-main">
-            <button class="sword-button weapon-button">
-              <!-- <i> icon tag here -->
+        <div class="weapons-main grey-border">
+            <button class="gem-button weapon-button raise">
+              <i class="fa-solid fa-gem fa-5x"></i>
             </button>
-            <button class="shield-button weapon-button">
-              <!-- <i> icon tag here -->
+            <button class="scissors-button weapon-button raise">
+              <i class="fa-solid fa-scissors fa-5x"></i>
             </button>
-            <button class="bow-button weapon-button">
-              <!-- <i> icon tag here -->
+            <button class="paper-button weapon-button raise">
+              <i class="fa-solid fa-toilet-paper fa-5x"></i>
             </button>
           </div>
         
-        <div class="divider"><span></span><span>Divider</span><span></span></div>
+        <div class="divider"><span></span><span>Battle</span><span></span></div>
 
-        <div class="game-output">
-            <div class="computer-play-div grey-border centering">
+        <div class="game-output grey-border">
+            <div class="computer-play-div centering">
               <p class="computer-title">Enemy's Weapon</p>
-              <i class="computer-icon fad fa-skull"></i>
+              <i class="fa-solid fa-skull fa-5x"></i>
             </div>
-            <div class="game-results">
+            <div class="game-results grey-border-left">
               <p class="round">Round: 0</p>
               <p class="lives">Your Lives: 5 ︱ Enemy's Lives: 5</p>
               <p class="combat-text">Combat Area: Empty</p>
@@ -58,13 +62,13 @@
 
         <div class="game-end-div">
             <p class="game-end-text"></p>
-            <button class="play-again">Fight Again!</button>
+            <button class="play-again" hidden>Fight Again!</button>
         </div>
     </main>
 
     <footer class="copyright">
         <p>☽ Crafted by Mummuro \ Design idea was taken from mooniiDev ☾</p>
       </footer>
-    <script type="text/javascript" src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
