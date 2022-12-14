@@ -48,6 +48,109 @@ let playerSelection;
       }
     })
   })
+  countRounds();
+  countLives(playerSelection, getComputerChoice());
+  resetGame();
 }
 
-getComputerChoice();
+function countRounds() {
+    round += 1;
+    rounds.innerText = `Round: ${round}`;
+    return round;
+  }
+
+function resetGame() {
+    buttonPlayAgain.addEventListener('click', () => {
+      window.location.reload();
+    });
+  }
+
+function countLives(playerSelection, computerSelection){
+    const gameOutput = document.querySelector('.game-output');
+    const computerPlayDiv = document.querySelector('.computer-play-div');
+    const leftBorder = document.querySelector('.game-results');
+    while(playerLives != 0 || computerLives !=0){
+        if(playerSelection === computerSelection){
+            combatText.innerText = `Wow, look....you have two ${playerSelection}s, it means a draw. It's even more interesting now!`;
+            gameOutput.classList.remove('grey-border');
+            gameOutput.classList.add('purple-border');
+            leftBorder.style.color = "#8070ac";
+        } else if(playerSelection === 'stone'){
+            if(computerSelection === 'paper'){
+              combatText.innerText = `Unfortunate defeat.. You lost one life, because your ${playerSelection} lacks of power against enemy's ${computerSelection}!`;
+              gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
+              gameOutput.classList.add('red-border');
+              leftBorder.style.color = "#b96b78";
+              playerLives -= 1;
+            }
+            else{
+              combatText.innerText = `Impressive attack! The enemy lost one life, because the great power of your ${playerSelection} crushed his ${computerSelection}!`;
+              gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
+              gameOutput.classList.add('green-border');
+              leftBorder.style.color = "#62b49c";
+              computerLives -= 1;
+            }
+        } else if(playerSelection === 'scissors'){
+            if(computerSelection === 'stone'){
+              combatText.innerText = `Unfortunate defeat.. You lost one life, because your ${playerSelection} lacks of power against enemy's ${computerSelection}!`;
+              gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
+              gameOutput.classList.add('red-border');
+              leftBorder.style.color = "#b96b78";
+              playerLives -= 1;
+            }
+            else{
+              combatText.innerText = `Impressive attack! The enemy lost one life, because the great power of your ${playerSelection} crushed his ${computerSelection}!`;
+              gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
+              gameOutput.classList.add('green-border');
+              leftBorder.style.color = "#62b49c";
+              computerLives -= 1;
+            }
+        } else if(playerSelection === 'paper'){
+            if(computerSelection === 'scissors'){
+              combatText.innerText = `Unfortunate defeat.. You lost one life, because your ${playerSelection} lacks of power against enemy's ${computerSelection}!`;
+              gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
+              gameOutput.classList.add('red-border');
+              leftBorder.style.color = "#b96b78";
+              playerLives -= 1;
+            }
+            else{
+              combatText.innerText = `Impressive attack! The enemy lost one life, because the great power of your ${playerSelection} crushed his ${computerSelection}!`;
+              gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
+              gameOutput.classList.add('green-border');
+              leftBorder.style.color = "#62b49c";
+              computerLives -= 1;
+            }
+    }
+    const lives = document.querySelector('.lives');
+    lives.innerText = `Your Lives: ${playerLives} ︱ Enemy's Lives: ${computerLives}`;
+    
+}
+
+const gameEndText = document.querySelector('.game-end-text');
+const computerIcon = document.querySelector('.computer-icon');
+computerIcon.style.opacity = '0.5';
+
+weaponsButtons.forEach((button) => {
+  button.setAttribute('disabled', '');
+  button.classList.add('disabled-button', 'opacity');
+});
+if(playerLives > computerLives){
+  combatText.innerText = 'Hehe, poor enemy has no lives left.. He barely holds himself in one piece.';
+  gameEndText.textContent = 'You Won This Battle!';
+  gameEndText.style.color = '#62b49c';
+} else {
+  combatText.innerText = 'Ouch.. No lives left for you. Enjoy the mocking laughter of the enemy.';
+  gameEndText.textContent = 'You Lost This Battle!';
+  gameEndText.style.color = '#b96b78';
+}
+
+buttonPlayAgain.style.visibility = 'visible';
+return [playerLives, computerLives];
+
+}
+
+playRound();
+
+
+
+
