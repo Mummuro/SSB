@@ -120,6 +120,16 @@ body{
   .grey-border-left{
     border-left: 4px solid #5e5e5e;
   }
+  .green-border-left{
+    border-left: 4px solid #62b49c;
+  }
+  .red-border-left{
+    border-left: 4px solid #b96b78;
+  }
+  .purple-border-left{
+    border-left: 4px solid #8070ac;
+  }
+
 
   /* Game End */
 .opacity {

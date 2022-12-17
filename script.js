@@ -96,16 +96,18 @@ function countLives(playerSelection, computerSelection){
   while(true){
     if(playerSelection === computerSelection){
       combatText.innerText = `Wow, look....you have two ${playerSelection}s, it means a draw. It's even more interesting now!`;
-      gameOutput.classList.remove('grey-border');
+      gameOutput.classList.remove('grey-border', 'green-border', 'red-border');
       gameOutput.classList.add('purple-border');
-      leftBorder.style.color = "#8070ac";
+      leftBorder.classList.remove('grey-border-left', 'green-border-left', 'red-border-left');
+      leftBorder.classList.add('purple-border-left');
       break;
     } else if(playerSelection === 'stone'){
         if(computerSelection === 'paper'){
           combatText.innerText = `Unfortunate defeat.. You lost one life, because your ${playerSelection} lacks of power against enemy's ${computerSelection}!`;
           gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
           gameOutput.classList.add('red-border');
-          leftBorder.style.color = "#b96b78";
+          leftBorder.classList.remove('grey-border-left', 'green-border-left', 'purple-border-left');
+          leftBorder.classList.add('red-border-left');
           playerLives -= 1;
           break;
         }
@@ -113,7 +115,8 @@ function countLives(playerSelection, computerSelection){
           combatText.innerText = `Impressive attack! The enemy lost one life, because the great power of your ${playerSelection} crushed his ${computerSelection}!`;
           gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
           gameOutput.classList.add('green-border');
-          leftBorder.style.color = "#62b49c";
+          leftBorder.classList.remove('grey-border-left', 'purple-border-left', 'red-border-left');
+          leftBorder.classList.add('green-border-left');
           computerLives -= 1;
           break;
         }
@@ -122,7 +125,8 @@ function countLives(playerSelection, computerSelection){
             combatText.innerText = `Unfortunate defeat.. You lost one life, because your ${playerSelection} lacks of power against enemy's ${computerSelection}!`;
             gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
             gameOutput.classList.add('red-border');
-            leftBorder.style.color = "#b96b78";
+            leftBorder.classList.remove('grey-border-left', 'green-border-left', 'purple-border-left');
+            leftBorder.classList.add('red-border-left');
             playerLives -= 1;
             break;
           }
@@ -130,7 +134,8 @@ function countLives(playerSelection, computerSelection){
             combatText.innerText = `Impressive attack! The enemy lost one life, because the great power of your ${playerSelection} crushed his ${computerSelection}!`;
             gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
             gameOutput.classList.add('green-border');
-            leftBorder.style.color = "#62b49c";
+            leftBorder.classList.remove('grey-border-left', 'purple-border-left', 'red-border-left');
+            leftBorder.classList.add('green-border-left');
             computerLives -= 1;
             break;
           }
@@ -139,7 +144,8 @@ function countLives(playerSelection, computerSelection){
             combatText.innerText = `Unfortunate defeat.. You lost one life, because your ${playerSelection} lacks of power against enemy's ${computerSelection}!`;
             gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
             gameOutput.classList.add('red-border');
-            leftBorder.style.color = "#b96b78";
+            leftBorder.classList.remove('grey-border-left', 'green-border-left', 'purple-border-left');
+            leftBorder.classList.add('red-border-left');
             playerLives -= 1;
             break;
           }
@@ -147,7 +153,8 @@ function countLives(playerSelection, computerSelection){
             combatText.innerText = `Impressive attack! The enemy lost one life, because the great power of your ${playerSelection} crushed his ${computerSelection}!`;
             gameOutput.classList.remove('grey-border', 'purple-border', 'green-border', 'red-border');
             gameOutput.classList.add('green-border');
-            leftBorder.style.color = "#62b49c";
+            leftBorder.classList.remove('grey-border-left', 'purple-border-left', 'red-border-left');
+            leftBorder.classList.add('green-border-left');
             computerLives -= 1;
             break;
           }
